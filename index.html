@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A capability-gated advanced graphics study with a WebGPU triangle path and an always-available Canvas constellation fallback." />
+    <title>WebGPU Constellation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="lab" aria-labelledby="title">
+      <header class="intro">
+        <p class="eyebrow">WEBGPU / FALLBACKS · standalone open-source lab</p>
+        <h1 id="title">WebGPU Constellation</h1>
+        <p>A capability-gated advanced graphics study with a WebGPU triangle path and an always-available Canvas constellation fallback.</p>
+        <div class="actions"><button id="start" type="button">Try WebGPU</button><button id="fallback" class="secondary" type="button">Use Canvas fallback</button><button id="save" class="secondary" type="button">Save PNG</button></div>
+        <p id="status" class="status" role="status" aria-live="polite">Ready. No external service is required.</p>
+      </header>
+      <section class="workspace"><div class="panel"><h2>Capability check</h2><p id="metrics" class="metrics">WebGPU has not been requested. This lab will not fail if it is unavailable.</p></div><div class="panel"><h2>Graphics output</h2><canvas id="canvas" tabindex="0" aria-label="Canvas constellation fallback"></canvas><canvas id="gpu-canvas" tabindex="0" aria-label="WebGPU triangle output" hidden></canvas></div></section>
+      <section class="notes" aria-label="Study notes"><h2>How to study this</h2><p>Start with `tryWebGPU()`: feature detection, adapter/device request, shader module, pipeline, canvas context, and render pass. Then inspect `drawFallback()` to understand why an advanced capability-gated demo must keep a useful Canvas path. MDN currently marks WebGPU as limited availability and secure-context-only, so the fallback is part of the lesson.</p></section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
